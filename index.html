@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/task1.css">
+</head>
+
+<body>
+    <div id="box">
+        <h2>საშოპინგო სია</h2>
+        <div id="box2">        <div><input oninput="serchitem()" type="text" id="serch-input" placeholder="მოძებნე" ></div><br>
+
+            <input type="text" name="" id="inp1" placeholder="დაამატეთ ახალი ნივთი">
+            <button class="add-button" onclick="addNewItem()">დაამატება</button>
+            <button class="add-button" onclick="deleteLastItem()">ბოლოში წაშალე</button>
+
+            <button class="add-button" onclick="addNewItemAtStart()">თავში დამატება</button>
+            <button class="add-button" onclick="deleteFirstItem()"> თავში წაშლა</button>
+
+
+            <br><br>
+
+            <input type="text" id="search-input" placeholder="Search">
+            <button onclick="searchItem()">Search</button>
+
+            <hr>
+
+            <div id="item-list"></div>
+
+        </div>
+        <div>
+            
+            <ul id="item-list">
+                <div>
+                
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="script/task1.js"></script>
+</html>
