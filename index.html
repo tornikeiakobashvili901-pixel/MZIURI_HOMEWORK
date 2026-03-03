@@ -1,45 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/task1.css">
-</head>
-
-<body>
-    <div id="box">
-        <h2>საშოპინგო სია</h2>
-        <div id="box2">        <div><input oninput="serchitem()" type="text" id="serch-input" placeholder="მოძებნე" ></div><br>
-
-            <input type="text" name="" id="inp1" placeholder="დაამატეთ ახალი ნივთი">
-            <button class="add-button" onclick="addNewItem()">დაამატება</button>
-            <button class="add-button" onclick="deleteLastItem()">ბოლოში წაშალე</button>
-
-            <button class="add-button" onclick="addNewItemAtStart()">თავში დამატება</button>
-            <button class="add-button" onclick="deleteFirstItem()"> თავში წაშლა</button>
-
-
-            <br><br>
-
-            <input type="text" id="search-input" placeholder="Search">
-            <button onclick="searchItem()">Search</button>
-
-            <hr>
-
-            <div id="item-list"></div>
-
-        </div>
-        <div>
-            
-            <ul id="item-list">
-                <div>
-                
-                </div>
-            </ul>
-        </div>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="body1">
+    <header>
+      <h1>Shopify</h1>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navigation">
+        <li><a href="contact.html">Home</a></li>
+          <li><a href="index.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+      </nav>
+    </header>
+    <main class="main-contact">
+      <div>
+      <img src="image.png"class="img5">
     </div>
-</body>
-<script src="script/task1.js"></script>
+    <div class="container1">
+
+
+      <div class="left-menu">
+        <p>Service Centers</p>
+        <p>Customs Clearance Zones</p>
+        <p>Customs Checkpoints</p>
+        <p>Competent Authorities</p>
+      </div>
+  
+
+      <div class="right-content">
+        <h2><b>Central office </b></h2>
+  
+        <p>Information Center:
+          <a href="#">2 299 299</a><br>
+        </p>
+  
+        <p><a href="#">In Rs Chat</a></p>
+  
+        <div class="section">
+          <h3 class="header3">Call Center Hours:</h3>
+          <p><b>Monday - Friday:</b> 10:00 - 18:00</p><br><br>
+          <p>16, V. Gorgasali str., 0114</p>
+          <p>E-mail: <a href="#">info@rs.ge</a></p> <br><br>
+        </div>
+  
+        <div class="section">
+          <h3 class="header3">PR and Marketing Department</h3> <br>
+          <p>Phone: 2 26 11 09</p> <br>
+          <p>16, V. Gorgasali str., 0114</p>
+          <p>E-mail: <a href="#">infopr@rs.ge</a></p>
+        </div>
+  
+      </div>
+  
+    </div>
+    </main>
+    <div>
+      <div class="top-bar">
+
+        <div class="contact-info">
+          
+          <div class="contact-item">
+            <img src="image copy 4.png" alt="Phone">
+            <span>2 299 299</span>
+          </div>
+    
+          <div class="contact-item">
+            <img src="image copy.png" alt="Email">
+            <span>info@rs.ge</span>
+          </div>
+    
+        </div>
+    
+        <div class="social-icons">
+          <img src="image copy 2.png" alt="Facebook">
+          
+          <a href="https://www.tiktok.com/@dalmat14/video/7587516224670633272?q=%40dalmat14&t=1772553972878"><img src="image copy 3.png" alt="YouTube" ></a>
+        </div>
+    
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
