@@ -1,42 +1,109 @@
-const movieForm = document.getElementById('movie-form');
-const movieList = document.getElementById('movie-list');
-const titleInput = document.getElementById('title');
-const yearInput = document.getElementById('year');
-const clearBtn = document.getElementById('clear-all');
+const BASE_URL = "https://crudcrud.com/api/f5fa89aaafa9463ebb80e0f4fd420dd5/games";
 
-const appendNewItem = (item) => {
-    const li = document.createElement("li");
-    li.textContent = `${item.title} (${item.year})`;
-    movieList.appendChild(li);
+const form = document.getElementById("add-form");
+const ul = document.getElementById("game-list");
+
+let editId = null;
+
+
+const addNewGame = async (game) => {
+  try {
+    const response = await fetch(BASE_URL, {
+      method: "POST",
+      body: JSON.stringify(game),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    const newGame = await response.json();
+
+    if (newGame) {
+      createGameItem(newGame);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const renderMovies = () => {
-    movieList.innerHTML = "";
-    const movies = JSON.parse(localStorage.getItem('movies')) || [];
-    movies.forEach(appendNewItem);
+
+const createGameItem = (game) => {
+  const li = document.createElement("li");
+
+  li.innerHTML = `
+
+    <div class="game-item" id="${game._id}">
+      <p class="ps">სახელი: ${game.name}</p>
+      <p class="ps">ჟანრი: ${game.ganre}</p>
+      <p class="ps">გამოშვების თარიღი: ${game.releaseDate}</p>
+      <p class="ps">ხანგრძლივობა: ${game.Duration}</p>
+      <button class="edit-item">Edit</button>
+      <button class="delete-item">Delete</button>
+    </div>
+
+  `;
+
+
+  li.querySelector(".delete-item").addEventListener("click", async () => {
+    await fetch(`${BASE_URL}/${game._id}`, {
+      method: "DELETE",
+    });
+    li.remove();
+  });
+
+
+  li.querySelector(".edit-item").addEventListener("click", () => {
+    form.name.value = game.name;
+    form.ganre.value = game.ganre;
+    form.releaseDate.value = game.releaseDate;
+    form.Duration.value = game.Duration;
+
+    editId = game._id;
+  });
+
+  ul.appendChild(li);
 };
 
-movieForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
 
-    const newMovie = {
-        title: titleInput.value,
-        year: yearInput.value
-    };
+  const game = {
+    name: formData.get("name"),
+    ganre: formData.get("ganre"),
+    releaseDate: formData.get("releaseDate"),
+    Duration: formData.get("Duration"),
+  };
 
-    const movies = JSON.parse(localStorage.getItem('movies')) || [];
-    movies.push(newMovie);
-    localStorage.setItem('movies', JSON.stringify(movies));
+  if (editId) {
 
-    titleInput.value = "";
-    yearInput.value = "";
+    await fetch(`${BASE_URL}/${editId}`, {
+      method: "PUT",
+      body: JSON.stringify(game),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
 
-    renderMovies();
+    editId = null;
+    ul.innerHTML = "";
+    fetchAllGames();
+  } else {
+
+    addNewGame(game);
+  }
+
+  form.reset();
 });
 
-clearBtn.addEventListener('click', () => {
-    localStorage.removeItem('movies');
-    renderMovies();
-});
 
-renderMovies();
+const fetchAllGames = async () => {
+  const response = await fetch(BASE_URL);
+  const allGames = await response.json();
+
+  for (let game of allGames) {
+    createGameItem(game);
+  }
+};
+
+fetchAllGames();

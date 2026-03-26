@@ -1,74 +1,125 @@
-body {
-    background: #8596e0;
-    height: 100vh;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.game-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+li{
+    list-style: none;
+
+}
+
+.game-item{
+    margin: 15px;
+    background-color:darkslategrey;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 450px;
+    height: 150px;
+}
+body{
+    background-color:dimgray;
+    margin: 0;
+    padding: 0;
+  
+  }
+ 
+  #p1{
+    font-size: 20px;
+  }
+  @font-face {
+    font-family: myfont;
+    src: url(Summer-Vibes-OTF.otf);
+  } 
+
+
+  @font-face {
+    font-family: left-font;
+    src: url(Bungee-Regular.ttf);
+  } 
+  #navigation{
+    font-family:myfont ;
+  }
+
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #383E48;
+  }
+
+
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .title1{
+    font-family: myfont;
+    color: white;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .inps{
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  #add-form{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+  #add{
+    height: 40px;
+    width: 70px;
+    border-radius: 20px;
   }
-  
-  .container h2 {
-    color:#8596e0 ;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+
+  .ps{
+    margin: 5px;
   }
-  
-  input,
-  button {
-    padding: 5px;
-    border-radius: 12px;
+
+
+  .edit-item{
+    border-radius: 20px;
+    width: 40px;
+    border: solid white 1px;
   }
-  
-  ul {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .delete-item{
+    border-radius: 20px;
+    width: 40px;
+    border: solid white 1px;
   }
-  
-  ul li {
-    background-color: white;
-    border: 1px solid black;
-    padding: 5px;
-    height: 20px;
-    border-radius: 12px;
-  }
-  
-  .item-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    margin-bottom: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  .delete-btn {
-    background-color: #ff4757;
+
+  .title2{
+    font-family: myfont;
     color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
+    font-size: 40px;
+    margin: 10px;
   }
-  
-  .delete-btn:hover {
-    background-color: #ff3838;
+  .title-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .item-text {
-    flex-grow: 1;
-  }
-  
+
+#game-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}

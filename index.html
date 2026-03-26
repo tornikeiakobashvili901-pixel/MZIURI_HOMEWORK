@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movie Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-    <h2 >my favorite movies</h2>
-    <form id="movie-form">
-        <input type="text" id="title" placeholder="ფილმის სახელი" required>
-        <input type="number" id="year" placeholder="წელი" required>
-        <button >დამატება</button>
+    <header>
+        <h1 class="title1">Movie List</h1>
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          
+        </header>
+        <div class="title-div">
+            <h1 class="title2">Movies Collection</h1>
+            </div>
+    <form id="add-form">
+        <input class="inps" type="text" name="name" id="name" placeholder="Movie name">
+        <input class="inps" type="number" name="releaseDate" id="releaseDate" placeholder="ReleseDate">
+        <input type="text" class="inps" name="ganre" id="ganre" placeholder="Ganre">
+        <input type="text" class="inps" name="Duration" id="Duration" placeholder="Duration">
+        <input type="submit" value="add" id="add">
     </form>
-
-    <button id="clear-all">სიის გასუფთავება</button>
-
-    <ul id="movie-list"></ul>
-    
-    <script src="script.js"></script>
+    <div class="title-div">
+    <h1 class="title2">my movies</h1>
     </div>
+    <ul id="game-list">
+
+    </ul>
 </body>
+<script src="script.js"></script>
 </html>
