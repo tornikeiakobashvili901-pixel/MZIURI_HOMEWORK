@@ -1,38 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Garage</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="title1">Movie List</h1>
-          <div class="burger" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          
-        </header>
-        <div class="title-div">
-            <h1 class="title2">Movies Collection</h1>
-            </div>
-    <form id="add-form">
-        <input class="inps" type="text" name="name" id="name" placeholder="Movie name">
-        <input class="inps" type="number" name="releaseDate" id="releaseDate" placeholder="ReleseDate">
-        <input type="text" class="inps" name="ganre" id="ganre" placeholder="Ganre">
-        <input type="text" class="inps" name="Duration" id="Duration" placeholder="Duration">
-        <input type="submit" value="add" id="add">
-    </form>
-    <div class="title-div">
-    <h1 class="title2">my movies</h1>
-    </div>
-    <ul id="game-list">
+      <h1>🏎️ Race Garage</h1>
+      <div class="sub-menu">
+        <span>BUY</span> • <span>TUNE</span> • <span>RACE</span>
+      </div>
+    </header>
+    <main> 
 
-    </ul>
-</body>
-<script src="script.js"></script>
+      <section class="buy-new-car default-section">
+        <h2>▶ Buy New Car</h2>      
+        <div class="new-car-form">
+          <input
+            type="text"
+            name="model"
+            id="model"
+            placeholder="Model Name (e.g Ambassador)"
+          />
+          <select name="brand" id="brand">
+            <option value="newest firs">newest firs</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Tesla">Tesla</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes">Mercedes</option>
+          </select>
+          <select name="type" id="type">
+            <option value="Sports">Sports</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Classic">Classic</option>
+            <option value="Electric">Electric</option>
+            <option value="Offroad">Offroad</option>
+          </select>
+          <button>Buy</button>
+        </div>
+      </section>
+      <section class="race-arena default-section">
+        <h2>🏁 Race Arena</h2>
+        <div class="arena-form">
+          <select name="car-1" id="car-1">
+            <option value="">Pick car 1</option>
+          </select>
+          <p class="versus">VS</p>
+          <select name="car-2" id="car-2">
+            <option value="">Pick car 2</option>
+          </select>
+          <button>Start Race</button>
+        </div>
+        <div class="results-container">
+          <div class="yellow-side-bar"></div>
+          <div class="results-content">
+              <span class="trophy">🏆</span>
+              <span class="winner-name">Gio's car wins</span>
+              <span class="score">300 vs 270</span>
+              <span class="damage-report">— Chito's car took some damage.</span>
+          </div>
+      </div>
+      </section>
+      <section class="search ">
+      <div class="search1">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="🔍 Search by model name..."
+        />
+        <select name="list" id="list">
+          <option value="Newest-first">Newest firs</option>
+        </select>
+      </section>
+      <div class="category-container">
+        <button class="tab">ALL</button>
+        <button class="tab">SPORTS</button>
+        <button class="tab">LUXURY</button>
+        <button class="tab">CLASSIC</button>
+        <button class="tab">ELECTRIC</button>
+        <button class="tab">OFFROAD</button>
+    </div>
+
+    </main>
+
+    <footer>
+      <div class="car-card">
+        <div class="header">
+          <h2>CHITO'S CAR</h2>
+          <span class="star">★</span>
+        </div>
+        <p class="brand">TOYOTA</p>
+      
+        <div class="stats-grid">
+          <div class="stat-item">
+            <label>TOP SPEED</label>
+            <p class="val">240 <span>km/h</span></p>
+          </div>
+          <div class="stat-item">
+            <label>TIER</label>
+            <p class="val">3 <span>/ 10</span></p>
+          </div>
+          <div class="stat-item">
+            <label>CATEGORY</label>
+            <div class="badge red">SPORTS</div>
+          </div>
+          <div class="stat-item">
+            <label>CONDITION</label>
+            <div class="badge green">GOOD</div>
+          </div>
+        </div>
+      
+        <div class="mods-section">
+          <label>MODS (1)</label>
+          <div class="mod-tag">turbo <span>×</span></div>
+          <div class="mod-input-group">
+            <input type="text" placeholder="e.g. turbo">
+            <button class="add-btn" id="add-btn">+ ADD</button>
+          </div>
+        </div>
+      
+        <div class="actions">
+          <button class="btn-tune">▲ TUNE</button>
+          <button class="btn-sell">SELL</button>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
